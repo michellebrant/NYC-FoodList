@@ -49,6 +49,10 @@ app.get("/", function(req, res){
 
   }
 
+app.get('/logout', function(req, res){
+  req.session.user=null;
+  res.redirect('/')
+})
   res.render('index', data);
 });
 //sign up page

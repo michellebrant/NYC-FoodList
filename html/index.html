@@ -1,37 +1,35 @@
 <!doctype html>
 <html>
   <head>
+    <link href="normalize.css" rel="stylesheet" type="text/css">
  <link href="style.css" rel="stylesheet" type="text/css">
     <link href="bootstrap.css" rel="stylesheet" type="text/css">
-
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   </head>
   <body>
-    <div class="main-container">
-      <div class="border-container">
-        <h1>Super Secure Website</h1>
-        <br>
         {{#logged_in}}
-        <div class="col-lg-6 center-block">
-          <div class="alert alert-dismissible alert-warning">
-            <h4>Welcome {{email}}!Your ID is {{id}}</h4>
-            <p>We are going to put all your things here.</p>
+        <div class=heading2>
+         <h1>New York FoodList </h1>
+         </div>
+          <h2>Welcome {{email}} ! </h2>
+          <div class="option1">
+          <a href="/yourlists/{{id}}">See your lists here!</a>
           </div>
-
-          <blockquote class="blockquote-reverse">
-            wanna add more? just click <a href='/new'>here!</a>
-                wanna see ur lists? just click <a href='/yourlists/{{id}}'>{{id}}!</a>
-
-          </blockquote>
+          <div class="option2">
+          <a href="/new">Search new restaurants here!</a>
+          </div>
           <a href="/logout">Logout!</a>
-        </div>
+
         {{/logged_in}}
         {{^logged_in}}
+         <div class=heading>
+         <h1>New York FoodList </h1>
+         </div>
         <div class="col-lg-6 center-block">
           <div class="well bs-component">
             <form class="form-horizontal" action="/login" method="post">
               <fieldset>
-              <div class=coverphoto>
-              </div>
+
                 <legend>Login</legend>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -56,7 +54,6 @@
           <p>Not a member? <a href="/signup">Sign Up!</a></p>
         </div>
         {{/logged_in}}
-      </div>
-    </div>
+
   </body>
 </html>

@@ -1,14 +1,35 @@
-body{
-  color: red;
-}
-
-div{
-  border: 10px solid black;
-}
 
 .heading{
   text-align: center;
-  background-image: url('NYC.jpg');
+  background: url('NYC.jpg') no-repeat 100% -66px;
   background-size: cover;
-  height: 150px;
+  height: 400px;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.heading h1{
+  margin: 0px;
+  padding: 0px;
+  color: white;
+font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+}
+
+body {
+margin: 0px;
+padding: 0px;
+}
+
+
+.heading2{
+  text-align: center;
+  background: url('bar.jpg') no-repeat 100% -66px;
+  background-size: cover;
+  height: 400px;
+  color: red;
+  margin: 0;
+  padding: 0;
 }
