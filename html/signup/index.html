@@ -1,36 +1,19 @@
 <!doctype html>
 <html>
   <head>
-<!--     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <div class="main-container">
       <div class="border-container">
-        <h1>Super Secure Website</h1>
-        <br>
-        {{#logged_in}}
-        <div class="col-lg-6 center-block">
-          <div class="alert alert-dismissible alert-warning">
-            <h4>Welcome {{email}}!Your ID is {{id}}</h4>
-            <p>We are going to put all your things here.</p>
-          </div>
-
-          <blockquote class="blockquote-reverse">
-            wanna add more? just click <a href='/new'>here!</a>
-                wanna see ur lists? just click <a href='/yourlists/{{id}}'>{{id}}!</a>
-
-          </blockquote>
-          <a href="/logout">Logout!</a>
-        </div>
-        {{/logged_in}}
-        {{^logged_in}}
+        <h1>Super Secure Signup Page</h1>
         <div class="col-lg-6 center-block">
           <div class="well bs-component">
-            <form class="form-horizontal" action="/login" method="post">
+            <form class="form-horizontal" action="/signup" method="post">
               <fieldset>
-                <legend>Login</legend>
+                <legend>Sign Up</legend>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                   <div class="col-lg-10">
@@ -45,18 +28,14 @@
                 </div>
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">Join!</button>
                   </div>
                 </div>
               </fieldset>
             </form>
           </div>
-          <p>Not a member? <a href="/signup">Sign Up!</a></p>
         </div>
-        {{/logged_in}}
       </div>
     </div>
   </body>
-  <script src="jquery.js"></script>
-<script src="scriptforhp.js"></script>
 </html>
