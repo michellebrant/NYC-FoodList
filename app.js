@@ -5,6 +5,9 @@ const pgp = require('pg-promise')();
 const mustacheExpress = require('mustache-express');
 const bodyParser = require("body-parser");
 const session = require('express-session');
+var Client = require('node-rest-client').Client;
+
+var client = new Client();
 app.listen(port);
 console.log('we are live on 8080')
 /* BCrypt stuff here */
@@ -106,32 +109,21 @@ app.get("/yourlists/:id", function(req, res){
   }
 )});
 
+app.get("/yourlists/:id", function(req, res){
+  id = req.params.id
+  db.many("SELECT * FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id]).then(function(data){
+      json_data_users = data;
+      res.render('yourlists.html',{
+        data: json_data_users
+      })
 
+  }
+)});
 
-
-
-// //create new list
-// app.post('/lists',function(req, res){
-//   lists = req.body
-//   userID = db.one('SELECT id FROM users WHERE users_id IN (SELECT id FROM users WHERE id = $1')
-
-//   db.none('INSERT INTO lists (list_name,location,restaurant_name,address,comments,user_id) VALUES ($1,$2,$3,$4,$5,$6)',
-//     [lists.list_name, lists.location, lists.restaurant_name, lists.address, lists.comments, lists.users_id])
-
-//   res.render('worked')
-// });
-
-// app.get("/api/users", function(req,res){
-//   db.many("SELECT * FROM users").then(function(data){
-//     var json_data_users = data;
-//     res.json(data);
-
-// })
-// })
-// // app.get('/:id', function(req, res) {
-// // res.render("single")
-// // })
-
-
+client.get("https://api.foursquare.com/v2/venues/explore?client_id=ZNEGNE4KLQ5OW03GEGIIDCS0XCZFCQE01S04NJVAN5R5LPCY&client_secret=CYYND5AXCAJ1SMQDNPZBHODBX1OEX3SQY4RBLPQKDAPXHQGT&near=flushing, NY &sortByDistance=1&radius=500&query=sushi&v=20161124&m=foursquare", function (data, response) {
+    // parsed response body as js object
+    console.log(data.response.groups[0].items[0].venue.name);
+    // raw response
+});
 
 
