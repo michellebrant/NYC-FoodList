@@ -53,7 +53,7 @@ app.get("/", function(req, res){
 });
 //sign up page
 app.get("/signup", function(req, res){
-  res.render('signup/index')
+  res.render('signup.html')
 });
 app.get("/new", function(req, res){
   res.render('new.html')
@@ -99,31 +99,55 @@ app.post('/login', function(req, res){
 
 
 app.get("/yourlists/:id", function(req, res){
+  console.log('in get /yourlists/:id');
   id = req.params.id
-  db.many("SELECT * FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id]).then(function(data){
+  db.many("SELECT * FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id])
+  .then(function(data){
+   //what to do if you are getting no data in it? if(message:no data returned from the query)
       json_data_users = data;
       res.render('yourlists.html',{
         data: json_data_users
+      }).error(function(data){
+        alert('no data yet!')
       })
+    })
+  .catch(function(error){
+    res.send("there was an error " + error);
+  })
 
-  }
-)});
-
-app.get("/yourlists/:id", function(req, res){
-  id = req.params.id
-  db.many("SELECT * FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id]).then(function(data){
-      json_data_users = data;
-      res.render('yourlists.html',{
-        data: json_data_users
-      })
-
-  }
-)});
-
-client.get("https://api.foursquare.com/v2/venues/explore?client_id=ZNEGNE4KLQ5OW03GEGIIDCS0XCZFCQE01S04NJVAN5R5LPCY&client_secret=CYYND5AXCAJ1SMQDNPZBHODBX1OEX3SQY4RBLPQKDAPXHQGT&near=flushing, NY &sortByDistance=1&radius=500&query=sushi&v=20161124&m=foursquare", function (data, response) {
-    // parsed response body as js object
-    console.log(data.response.groups[0].items[0].venue.name);
-    // raw response
 });
 
+app.get("/yourlists/:id/:listname", function(req, res){
+  id = req.params.id
+  listname = req.params.listname
+  db.many("SELECT * FROM lists WHERE list_name ='"+listname+ "' AND users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id]).then(function(data){
+      json_data_list = data;
+      res.render('singlelist.html',{
+        data: json_data_list
+      })
 
+  }
+)});
+
+app.get("/:area/:name", function(req, res){
+  area = req.params.area
+  name = req.params.name
+  client.get("https://api.foursquare.com/v2/venues/explore?client_id=ZNEGNE4KLQ5OW03GEGIIDCS0XCZFCQE01S04NJVAN5R5LPCY&client_secret=CYYND5AXCAJ1SMQDNPZBHODBX1OEX3SQY4RBLPQKDAPXHQGT&near="+area+",NY &sortByDistance=1&radius=500&query="+name+"&v=20161124&m=foursquare", function (data, response) {
+    restaurant_name = data.response.groups[0].items[0].venue.name;
+    address = data.response.groups[0].items[0].venue.location.formattedAddress[0] + data.response.groups[0].items[0].venue.location.formattedAddress[1] + data.response.groups[0].items[0].venue.location.formattedAddress[2];
+    res.render('single_restaurant.html',{
+    area: area,
+    restaurant_name: restaurant_name,
+    address : address
+})
+
+})
+})
+app.post('/confirmation',function(req, res){
+  data = req.body
+  id = req.session.user.id
+  db.none('INSERT INTO lists (list_name, location, restaurant_name, address, comments, users_id) VALUES ($1,$2,$3,$4,$5, $6)',
+    [data.list_name, data.location, data.restaurant_name, data.address, data.comments, id])
+
+  res.render('confirmation.html')
+});

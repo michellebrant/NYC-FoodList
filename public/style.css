@@ -5,3 +5,10 @@ body{
 div{
   border: 10px solid black;
 }
+
+.heading{
+  text-align: center;
+  background-image: url('NYC.jpg');
+  background-size: cover;
+  height: 150px;
+}

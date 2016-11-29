@@ -39,8 +39,8 @@ appendResults = function(data){
     itemAddress.text(address);
     itemPrice.text(price);
     itemRating.text(rating);
-    addMeButton = $('<button class="addme">Add Me!</button>');
-    results.append(addMeButton);
+    addMeLink = $("<a href=/"+ll+"/"+name+">"+name+"</a>");
+    results.append(addMeLink);
     results.append(item);
     results.append(itemAddress);
     results.append(itemPrice);
@@ -49,9 +49,7 @@ appendResults = function(data){
     resultDiv.append(results);
     $('body').append(resultDiv);
   }
-  $('.addme').click(function(event){
-    getSingleInfo();
-  })
+
 
 }
 
