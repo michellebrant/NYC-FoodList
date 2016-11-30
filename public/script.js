@@ -14,16 +14,29 @@ getAllInfo = function(data) {
 }
 $('#submit_button').click(function(event) {
     event.preventDefault();
-    restaurant = $('input').val();
+    restaurant = $('#restaurant-entered').val()
+    restaurant = restaurant.split(' ');
+    restaurant = restaurant.join('%20')
     ll = $('select').val();
+    ll = ll.split(' ');
+    ll = ll.join("%20")
     getAllInfo(restaurant);
 })
 
+// $('.dropdown-toggle').dropdown()
+
+$('li').mouseover(function(event){
+  $(this).addClass('active')
+})
+
+$('li').mouseout(function(event){
+  $('li').removeClass('active')
+})
 
 appendResults = function(data){
   result = data.response.groups[0]
   for(i=0;i<10;i++){
-    resultDiv = $('<div></div>')
+    resultDiv = $('<div class="col-md-6"></div>')
     results = $('<ul></ul>');
     item = $('<li></li>');
     itemAddress = $('<li></li>');
@@ -31,19 +44,26 @@ appendResults = function(data){
     itemRating = $('<li></li>');
     itemHours = $('<li></li>');
     name = result.items[i].venue.name;
+    namer = JSON.stringify(name)
+    namer = namer.split(' ');
+    namer = namer.join('%20');
+    namer = namer.replace('"', '');
+    namer = namer.replace('"', '');
+    console.log(namer)
     address = data.response.groups[0].items[i].venue.location.formattedAddress[0] + data.response.groups[0].items[i].venue.location.formattedAddress[1] + data.response.groups[0].items[i].venue.location.formattedAddress[2];
-    //ADD ICON!
-    price = data.response.groups[0].items[i].venue.price.message + data.response.groups[0].items[i].venue.price.tier;
+    // src = data.response.groups[0].items[i].venue.categories[0].icon.prefix+ data.response.groups[0].items[i].venue.categories[0].icon.suffix
+    // icon = $('<img src='+src+'>')
+    // price = data.response.groups[0].items[i].venue.price.message + data.response.groups[0].items[i].venue.price.tier;
     rating = data.response.groups[0].items[i].venue.rating + data.response.groups[0].items[i].venue.ratingColor;
     item.text(name);
     itemAddress.text(address);
-    itemPrice.text(price);
+    // itemPrice.text(price);
     itemRating.text(rating);
-    addMeLink = $("<a href=/"+ll+"/"+name+">"+name+"</a>");
+    addMeLink = $("<a href=/"+ll+'/'+namer+'>'+name+"</a>");
     results.append(addMeLink);
     results.append(item);
     results.append(itemAddress);
-    results.append(itemPrice);
+    // results.append(itemPrice);
     results.append(itemRating);
     results.append(itemHours);
     resultDiv.append(results);

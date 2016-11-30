@@ -17,6 +17,7 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/html');
 app.use("/", express.static(__dirname + '/public'));
+app.use("/:area", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -38,8 +39,6 @@ app.get("/", function(req, res){
     logged_in = true;
     email = req.session.user.email;
     id = req.session.user.id;
-    console.log(req.session.user)
-    console.log(id)
   }
 
   var data = {
@@ -103,9 +102,11 @@ app.post('/login', function(req, res){
 
 
 app.get("/yourlists/:id", function(req, res){
-  console.log('in get /yourlists/:id');
   id = req.params.id
   db.many("SELECT * FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id])
+    .catch(function(error){
+    res.send("there was an error " + error);
+  })
   .then(function(data){
    //what to do if you are getting no data in it? if(message:no data returned from the query)
       json_data_users = data;
@@ -115,9 +116,7 @@ app.get("/yourlists/:id", function(req, res){
         alert('no data yet!')
       })
     })
-  .catch(function(error){
-    res.send("there was an error " + error);
-  })
+
 
 });
 

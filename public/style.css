@@ -5,25 +5,66 @@
   background-size: cover;
   height: 400px;
   color: red;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
-.heading h1{
+.heading4{
+  text-align: center;
+  background: url('jackswife.jpg') no-repeat 100% -66px;
+  background-size: cover;
+  height: 400px;
+  color: red;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1{
   margin: 0px;
   padding: 0px;
   color: white;
-font-family: 'PT Sans', sans-serif;
+ font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   font-size: 100px;
 }
+.heading5{
+  text-align: center;
+  background: url('pizza.jpg') no-repeat 100% -66px;
+  background-size: cover;
+  height: 400px;
+  color: red;
+  margin: 0px;
+  padding: 0px;
+}
+.heading5{
+  text-align: center;
+  background: url('russ.jpg') no-repeat 100% -140px;
+  background-size: cover;
+  height: 400px;
+  color: red;
+  margin: 0px;
+  padding: 0px;
+}
+li{
+   font-family: 'PT Sans', sans-serif;
+}
+
+
+nav{
+  margin: 0px;
+  padding: 0px;
+}
+
 
 body {
 margin: 0px;
 padding: 0px;
+ font-family: 'PT Sans', sans-serif;
 }
 
-
+ul{
+  list-style-type: none;
+}
 .heading2{
   text-align: center;
   background: url('bar.jpg') no-repeat 100% -66px;
@@ -32,4 +73,26 @@ padding: 0px;
   color: red;
   margin: 0;
   padding: 0;
+}
+
+.heading3{
+  text-align: center;
+  background: url('coffee.jpg') no-repeat 100% -66px;
+  background-size: cover;
+  height: 400px;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+
+/* div{
+  border: black solid 5px;
+}
+ */
+.col-md-6{
+  text-align: center;
+}
+
+.welcome{
+  text-align: center;
 }
