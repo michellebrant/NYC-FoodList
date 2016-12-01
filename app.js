@@ -1,4 +1,4 @@
-var port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 const express = require('express');
 const app = express();
 const pgp = require('pg-promise')();
@@ -28,7 +28,7 @@ app.use(session({
   cookie: { secure: false }
 }))
 
-var db = pgp('postgres://MichelleBrant@localhost:5432/foodlist_db');
+var db = pgp(process.env.DATABASE_URL || 'postgres://MichelleBrant@localhost:5432/foodlist_db');
 //main login page
 app.get("/", function(req, res){
   var logged_in;

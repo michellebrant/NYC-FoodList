@@ -1,0 +1,44 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+     "engines": {
+    "node": "6.8.1"
+  },
+  "dependencies": {
+    "ajax-request": "^1.2.1",
+    "body-parser": "^1.15.2",
+    "bcrypt": "^0.8.7",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "fetch": "^1.1.0",
+    "jquery": "^3.1.1",
+    "listener": "^1.0.1",
+    "mustache-express": "^1.2.4",
+    "method-override": "^2.3.7",
+    "node-rest-client": "^2.0.1",
+    "pg-promise": "^5.4.3",
+    "request": "^2.79.0",
+    "session": "^0.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michellebrant/Project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michellebrant/Project2/issues"
+  },
+  "homepage": "https://github.com/michellebrant/Project2#readme"
+}
+
