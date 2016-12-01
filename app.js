@@ -84,8 +84,6 @@ app.post('/signup', function(req, res){
 //signin
 app.post('/login', function(req, res){
   var data = req.body;
-
-
   db.one(
     "SELECT * FROM users WHERE email = $1",
     [data.email, data.id]
@@ -110,16 +108,18 @@ app.post('/login', function(req, res){
 app.get("/yourlists/:id", function(req, res){
   id = req.params.id
   db.many("SELECT DISTINCT list_name, users_id FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id])
+  .catch(function(error){
+    res.render('error.html');
+  })
+
+
   .then(function(data){
    //what to do if you are getting no data in it? if(message:no data returned from the query)
       json_data_users = data;
       res.render('yourlists.html',{
         data: json_data_users
       })
-    }).catch(function(error){
-    res.render('error.html');
-  })
-
+    })
 
 });
 
