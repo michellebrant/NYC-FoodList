@@ -5,7 +5,7 @@
     <link href="bootstrap.css" rel="stylesheet" type="text/css">
     <link href="bootstraptheme.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
-  <title></title>
+  <title>NYC FoodList</title>
 </head>
 <body>
   <nav class="navbar-default">
@@ -28,11 +28,10 @@
         <li class="dropdown" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" >
-            <li><a href="#">About</a></li>
-            <li><a href="#">Your Lists</a></li>
+   <li><a href="/about">About</a></li>
             <li><a href="/logout">Logout</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </li>
       </ul>
@@ -41,11 +40,13 @@
   </div><!-- /.container-fluid -->
 </nav>
  <div class=heading5>
-         <h1>New York FoodList </h1>
+         <h1>Your Lists</h1>
          </div>
 {{#data}}
+<div class="spacer">
 <div class="col-md-6">
-<a href='/yourlists/{{users_id}}/{{list_name}}'>{{list_name}}</a>
+<a class="yourlists" href='/yourlists/arehere/{{users_id}}/{{list_name}}'>{{list_name}}</a>
+</div>
 </div>
 {{/data}}
 <footer class="navbar-default navbar-fixed-bottom">

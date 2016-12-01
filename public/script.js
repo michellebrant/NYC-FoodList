@@ -1,6 +1,3 @@
-console.log('script loaded!')
-
-
 getAllInfo = function(data) {
     $.ajax({
             url: "https:api.foursquare.com/v2/venues/explore?client_id=ZNEGNE4KLQ5OW03GEGIIDCS0XCZFCQE01S04NJVAN5R5LPCY&client_secret=CYYND5AXCAJ1SMQDNPZBHODBX1OEX3SQY4RBLPQKDAPXHQGT&near="+ll+",NY &sortByDistance=1&radius=500&query=+"+restaurant+"&v=20161124&m=foursquare",
@@ -8,8 +5,6 @@ getAllInfo = function(data) {
         })
         .done(function(data) {
           appendResults(data);
-          URL =  "https:api.foursquare.com/v2/venues/explore?client_id=ZNEGNE4KLQ5OW03GEGIIDCS0XCZFCQE01S04NJVAN5R5LPCY&client_secret=CYYND5AXCAJ1SMQDNPZBHODBX1OEX3SQY4RBLPQKDAPXHQGT&near="+ll+",NY &sortByDistance=1&radius=500&query=+"+restaurant+"&v=20161124&m=foursquare"
-          console.log(URL)
         })
 }
 $('#submit_button').click(function(event) {
@@ -21,6 +16,10 @@ $('#submit_button').click(function(event) {
     ll = ll.split(' ');
     ll = ll.join("%20")
     getAllInfo(restaurant);
+})
+
+$('#clear').click(function(event) {
+   $('.col-md-6').remove();
 })
 
 // $('.dropdown-toggle').dropdown()
@@ -39,7 +38,9 @@ appendResults = function(data){
     resultDiv = $('<div class="col-md-6"></div>')
     results = $('<ul></ul>');
     item = $('<li></li>');
-    itemAddress = $('<li></li>');
+    itemAddress1 = $('<li></li>');
+    itemAddress2 = $('<li></li>');
+    itemAddress3 = $('<li></li>');
     itemPrice = $('<li></li>');
     itemRating = $('<li></li>');
     itemHours = $('<li></li>');
@@ -49,20 +50,27 @@ appendResults = function(data){
     namer = namer.join('%20');
     namer = namer.replace('"', '');
     namer = namer.replace('"', '');
-    console.log(namer)
-    address = data.response.groups[0].items[i].venue.location.formattedAddress[0] + data.response.groups[0].items[i].venue.location.formattedAddress[1] + data.response.groups[0].items[i].venue.location.formattedAddress[2];
+    address1 = data.response.groups[0].items[i].venue.location.formattedAddress[0];
+    address2 = data.response.groups[0].items[i].venue.location.formattedAddress[1];
+    address3 = data.response.groups[0].items[i].venue.location.formattedAddress[2];
     // src = data.response.groups[0].items[i].venue.categories[0].icon.prefix+ data.response.groups[0].items[i].venue.categories[0].icon.suffix
     // icon = $('<img src='+src+'>')
     // price = data.response.groups[0].items[i].venue.price.message + data.response.groups[0].items[i].venue.price.tier;
-    rating = data.response.groups[0].items[i].venue.rating + data.response.groups[0].items[i].venue.ratingColor;
-    item.text(name);
-    itemAddress.text(address);
+    rating = data.response.groups[0].items[i].venue.rating
+    ratingColor = data.response.groups[0].items[i].venue.ratingColor;
+    // item.text(name);
+    itemAddress1.text(address1 + ' ');
+    itemAddress2.text(address2 + ' ');
+    itemAddress3.text(address3 + ' ');
     // itemPrice.text(price);
-    itemRating.text(rating);
+    itemRating.text('Rating: '+rating);
+    itemRating.css('color', '#'+ratingColor)
     addMeLink = $("<a href=/"+ll+'/'+namer+'>'+name+"</a>");
     results.append(addMeLink);
     results.append(item);
-    results.append(itemAddress);
+    results.append(itemAddress1);
+    results.append(itemAddress2);
+    results.append(itemAddress3);
     // results.append(itemPrice);
     results.append(itemRating);
     results.append(itemHours);

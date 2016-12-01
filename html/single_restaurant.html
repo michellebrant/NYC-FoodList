@@ -7,7 +7,7 @@
      <link href="style.css" rel="stylesheet" type="text/css">
 
 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <title></title>
+  <title>NYC FoodList</title>
 </head>
 <body>
 <nav class="navbar-default">
@@ -30,11 +30,10 @@
         <li class="dropdown" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" >
-            <li><a href="#">About</a></li>
-            <li><a href="#">Your Lists</a></li>
+         <li><a href="/about">About</a></li>
             <li><a href="/logout">Logout</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </li>
       </ul>
@@ -43,15 +42,40 @@
   </div><!-- /.container-fluid -->
 </nav>
  <div class=heading4>
-         <h1>Find new restaurants here!</h1>
+         <h1>{{restaurant_name}}</h1>
          </div>
-<form method="POST" action="/confirmation">
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+<h3>See full info below, and if you like what you say indicate which list you'd like to save to below, along with your own comments about this place. If you'd like to create a new list, just enter the name!</h3>
+</div>
+<div class="col-md-2">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="text">
+<h4>See what other visitors had to say:</h4>
+"{{tip}}"
+<br>
+<a href='{{reviewurl}}'>See full review and more here </a>
+</div>
+
+<div class='newform'>
+<form class="center-block" method="POST" action="/confirmation">
 <input name= "list_name" id="list_name" value="List Name"><br>
 <input name="area" id="area" value="{{area}}"><br>
 <input name= "restaurant_name" id="restaurant_name" value="{{restaurant_name}}"><br>
 <input name="address" id="address" value="{{address}}"><br>
 <input name="comments" id="comments" value="Comments"><br>
 <button type="submit">Save</button>
+</form>
+</div>
+<div class='space'>
+</div>
 <script src="jquery.js"></script>
 <script src="bootstrap.min.js"></script>
 <footer class="navbar-default navbar-fixed-bottom">

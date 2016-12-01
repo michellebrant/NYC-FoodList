@@ -1,7 +1,11 @@
-
 .heading{
   text-align: center;
-  background: url('NYC.jpg') no-repeat 100% -66px;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url('NYC.jpg') no-repeat 100% -66px;
+
   background-size: cover;
   height: 400px;
   color: red;
@@ -11,7 +15,11 @@
 
 .heading4{
   text-align: center;
-  background: url('jackswife.jpg') no-repeat 100% -66px;
+   background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url('jackswife.jpg') no-repeat 100% -66px;
   background-size: cover;
   height: 400px;
   color: red;
@@ -27,18 +35,27 @@ h1{
   font-weight: bold;
   font-size: 100px;
 }
+
 .heading5{
   text-align: center;
-  background: url('pizza.jpg') no-repeat 100% -66px;
+   background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url('russ.jpg') no-repeat 100% -140px;
   background-size: cover;
   height: 400px;
   color: red;
   margin: 0px;
   padding: 0px;
 }
-.heading5{
+.heading7{
   text-align: center;
-  background: url('russ.jpg') no-repeat 100% -140px;
+   background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),  url('bar.jpg') no-repeat 100% -200px;
   background-size: cover;
   height: 400px;
   color: red;
@@ -65,19 +82,29 @@ padding: 0px;
 ul{
   list-style-type: none;
 }
-.heading2{
+.dabody{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url('pizza.jpg') no-repeat -150px;
   text-align: center;
-  background: url('bar.jpg') no-repeat 100% -66px;
-  background-size: cover;
-  height: 400px;
-  color: red;
-  margin: 0;
-  padding: 0;
+}
+.signupbody{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url('amplehills.jpg') no-repeat;
+    background-size: 100%;
+  text-align: center;
 }
 
 .heading3{
   text-align: center;
-  background: url('coffee.jpg') no-repeat 100% -66px;
+   background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ), url('coffee.jpg') no-repeat 100% -66px;
   background-size: cover;
   height: 400px;
   color: red;
@@ -93,6 +120,173 @@ ul{
   text-align: center;
 }
 
+.col-md-8{
+  text-align: center;
+}
+
 .welcome{
   text-align: center;
 }
+
+.newform{
+  text-align: center;
+  margin-top: 50px;
+}
+
+h2{
+  color: black;
+}
+.search{
+  text-align: center;
+}
+
+.space{
+  height: 100px;
+}
+
+input{
+  width: 300px;
+}
+
+.text{
+  text-align: center;
+}
+
+.confirmation{
+ background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),  url('loopy.jpg');
+  background-size: cover;
+}
+
+.confirmation2{
+  text-align: center;
+}
+
+.confirmation2 h2{
+  text-align: center;
+  color: white;
+  font-size:  50px;
+}
+
+
+.confirmation2 a{
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.col-md-3{
+  text-align: center;
+}
+
+.indexpage{
+  color: white;
+  font-size: 20px;
+}
+
+#high{
+  font-size: 75px;
+}
+
+form{
+  width: 300px;
+}
+legend{
+  color: white;
+}
+label{
+  color: white;
+}
+.herez{
+  margin-top: 100px;
+}
+
+.signupform{
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+}
+
+
+.signupform a{
+  text-align: center;
+  color: white;
+}
+
+.signup{
+  padding-top: 100px;
+}
+
+.youdidit{
+  font-size: 30px;
+}
+
+.error{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url('artichoke.jpg') no-repeat;
+    background-size: 100%;
+  text-align: center;
+}
+
+.contact{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url('tacombi.jpg') no-repeat;
+background-size: 100%;
+  text-align: center;
+}
+
+.yourlists{
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+}
+
+.spacer{
+  margin-top: 10px;
+}
+
+.about{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url('NYC B&W.jpg') no-repeat;
+    background-size: 100%;
+  text-align: center;
+}
+
+.aboutparagraph{
+  margin-top: 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.aboutdiv{
+  margin-top: 30%;
+}
+.contactdiv{
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+.link{
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover{
+  color: blue;
+}
+
+.top{
+  margin-top: 20px;
+}
+

@@ -14,6 +14,6 @@ CREATE TABLE lists (
   location VARCHAR(255),
   restaurant_name VARCHAR(255),
   address VARCHAR(255),
-  comments VARCHAR(1000),
+  comments TEXT,
   users_id INTEGER
 );

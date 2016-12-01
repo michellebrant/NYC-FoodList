@@ -9,7 +9,8 @@
 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 
   </head>
-  <body>
+  <title>NYC FoodList</title>
+  <body class='dabody'>
   <nav class="navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,11 +31,10 @@
         <li class="dropdown" >
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu" >
-            <li><a href="#">About</a></li>
-            <li><a href="#">Your Lists</a></li>
+              <li><a href="/about">About</a></li>
             <li><a href="/logout">Logout</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </li>
       </ul>
@@ -43,32 +43,36 @@
   </div><!-- /.container-fluid -->
 </nav>
         {{#logged_in}}
-        <div class=heading2>
+
+      <!--   <div class=heading2>
          <h1>New York FoodList </h1>
-         </div>
+         </div> -->
          <div class="welcome">
-          <h2>Welcome {{email}} ! </h2>
+          <h2 class='indexpage' id="high">Welcome <br>{{email}} ! </h2>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="col-md-6">
+          <a class='indexpage' href="/yourlists/{{id}}">See your lists here!</a>
           </div>
           <div class="col-md-6">
-          <a href="/yourlists/{{id}}">See your lists here!</a>
+          <a class='indexpage' href="/new">Search new restaurants here!</a>
           </div>
-          <div class="col-md-6">
-          <a href="/new">Search new restaurants here!</a>
           </div>
           <footer class="navbar-default navbar-fixed-bottom">
           <div class="container-fluid">
           <p>Made by Michelle Brant</p>
-          </div>
+
           </footer>
 
         {{/logged_in}}
         {{^logged_in}}
-         <div class=heading>
+
          <h1>New York FoodList </h1>
-         </div>
-        <div class="col-lg-6 center-block">
-          <div class="well bs-component">
-            <form class="form-horizontal" action="/login" method="post">
+
+            <form class="form-horizontal center-block herez" action="/login" method="post">
               <fieldset>
 
                 <legend>Login</legend>
@@ -87,12 +91,11 @@
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
                     <button type="submit" class="btn btn-primary">Login</button>
-                  </div>
               </fieldset>
             </form>
-          </div>
+            <div class="signupform">
           <p>Not a member? <a href="/signup">Sign Up!</a></p>
-        </div>
+          </div>
         {{/logged_in}}
 
   </body>
