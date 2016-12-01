@@ -87,15 +87,15 @@ app.post('/login', function(req, res){
   db.one(
     "SELECT * FROM users WHERE email = $1",
     [data.email, data.id]
-  ).then(function(user){
+  ).catch(function(){
+    res.render('notfound.html')
+  }).then(function(user){
     bcrypt.compare(data.password, user.password_digest, function(err, cmp){
       if(cmp){
         req.session.user = user;
         db.one("SELECT * FROM users WHERE email = $1", [data.email]).then(function(data){
           Data = data;
         res.redirect('/');
-  }).catch(function(){
-    res.render('notfound.html')
   })
       } else {
         res.render('notfound.html')
@@ -108,18 +108,16 @@ app.post('/login', function(req, res){
 app.get("/yourlists/:id", function(req, res){
   id = req.params.id
   db.many("SELECT DISTINCT list_name, users_id FROM lists WHERE users_id IN (SELECT id FROM users WHERE id =$1)", [req.params.id])
-  .catch(function(error){
-    res.render('error.html');
-  })
-
-
   .then(function(data){
    //what to do if you are getting no data in it? if(message:no data returned from the query)
       json_data_users = data;
       res.render('yourlists.html',{
         data: json_data_users
       })
-    })
+    }).catch(function(error){
+    res.render('error.html');
+  })
+
 
 });
 
