@@ -1,11 +1,14 @@
 const port = process.env.PORT || 8080;
 const express = require('express');
 const app = express();
+var methodOverride = require('method-override')
 const pgp = require('pg-promise')();
 const mustacheExpress = require('mustache-express');
 const bodyParser = require("body-parser");
 const session = require('express-session');
 var Client = require('node-rest-client').Client;
+
+
 
 var client = new Client();
 app.listen(port);
@@ -20,6 +23,7 @@ app.use("/", express.static(__dirname + '/public'));
 app.use("/:area", express.static(__dirname + '/public'));
 app.use("/yourlists/arehere/:id/:listname", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(session({
   secret: 'theTruthIsOutThere51',
@@ -160,3 +164,10 @@ app.post('/confirmation',function(req, res){
 
   res.render('confirmation.html')
 });
+
+app.delete('/place/:id',function(req, res){
+  id = req.params.id
+  db.none("DELETE FROM lists WHERE id=$1", [id])
+  res.render('deleted.html')
+});
+
