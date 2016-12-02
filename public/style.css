@@ -126,6 +126,7 @@ ul{
   .heading5 { height: 200px; }
   .heading7 { background-size: 150%; }
   .heading7  { height: 200px; }
+  .dabody {height:100%;}
 
 
 }
@@ -148,7 +149,7 @@ ul{
 
   @media only screen and (max-width: 500px){
         .heading7{ background-size: 200%; }
-        .dabody {background-size: 600%;}
+
 }
 /* div{
   border: black solid 5px;
