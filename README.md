@@ -31,4 +31,4 @@ As a user, I can create lists for different types of things I want to do- brunch
 
 ## Acknowledgements
 Special thanks to:
-- The foursquare API
+- The Foursquare API
