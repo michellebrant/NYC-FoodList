@@ -126,7 +126,7 @@ ul{
   .heading5 { height: 200px; }
   .heading7 { background-size: 150%; }
   .heading7  { height: 200px; }
-  .dabody {height:100%;}
+  .dabody {background-size:contain;}
 
 
 }
