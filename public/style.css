@@ -92,6 +92,7 @@ ul{
       rgba(0, 0, 0, 0.4)
     ), url('pizza.jpg') no-repeat -150px;
   text-align: center;
+  background-size: 100%;
 }
 .signupbody{
   background: linear-gradient(
