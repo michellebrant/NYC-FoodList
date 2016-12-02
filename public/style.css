@@ -126,8 +126,9 @@ ul{
   .heading5 { height: 200px; }
   .heading7 { background-size: 150%; }
   .heading7  { height: 200px; }
-  .dabody {background-size: 1000px 1000px;}
-
+  .dabody { background: linear-gradient(rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url('pizza2.jpg') no-repeat -66px;
+      background-size: cover; }
 
 }
 @media only screen and (max-width: 800px){
@@ -149,7 +150,6 @@ ul{
 
   @media only screen and (max-width: 500px){
         .heading7{ background-size: 200%; }
-
 }
 /* div{
   border: black solid 5px;
