@@ -4,13 +4,13 @@ NYC FoodList allows you to congregate lists of different restaurants, places, or
 
 ### Wireframe 1
 
-![welcome page wireframe](https://github.com/michellebrant/Project1/blob/master/wirefram21.png)
+![Wireframe1](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe1.jpg)
 
 ### Wireframe 2
-![welcome page wireframe](https://github.com/michellebrant/Project1/blob/master/wireframe2.png)
+![Wireframe2](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe2.jpg)
 
 ### Wireframe 3
-![welcome page wireframe](https://github.com/michellebrant/Project1/blob/master/wireframe3.png)
+![Wireframe3](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe3.jpg)
 
 ## User Story
 The target users for this game are city foodies and adventure seekers.
