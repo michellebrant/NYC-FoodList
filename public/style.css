@@ -92,7 +92,6 @@ ul{
       rgba(0, 0, 0, 0.4)
     ), url('pizza.jpg') no-repeat -150px;
   text-align: center;
-  background-size: 100%;
 }
 .signupbody{
   background: linear-gradient(
@@ -127,6 +126,7 @@ ul{
   .heading5 { height: 200px; }
   .heading7 { background-size: 150%; }
   .heading7  { height: 200px; }
+  .dabody {background-size: 300%;}
 
 }
 @media only screen and (max-width: 800px){
