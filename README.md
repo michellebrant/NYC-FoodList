@@ -4,7 +4,7 @@ NYC FoodList allows you to congregate lists of different restaurants, places, or
 
 ### Wireframe 1
 
-![Wireframe1](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe1.png)
+![Wireframe1](https://github.com/michellebrant/NYC-FoodList/blob/master/Wireframe1.png)
 
 ### Wireframe 2
 ![Wireframe2](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe2.png)
