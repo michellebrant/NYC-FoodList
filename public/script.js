@@ -1,7 +1,3 @@
-var ClientKey2 = process.env.ClientKey2
-var Clientsecret2 = process.env.Clientsecret2
-
-
 getAllInfo = function(data) {
     $.ajax({
             url: "https://api.foursquare.com/v2/venues/explore?client_id="+ClientKey2+"&client_secret="+Clientsecret2+"&near="+ll+",NY &sortByDistance=1&radius=500&query=+"+restaurant+"&v=20161124&m=foursquare",
