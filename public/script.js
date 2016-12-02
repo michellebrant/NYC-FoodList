@@ -1,6 +1,6 @@
 getAllInfo = function(data) {
     $.ajax({
-            url: "https://api.foursquare.com/v2/venues/explore?client_id=ZNEGNE4KLQ5OW03GEGIIDCS0XCZFCQE01S04NJVAN5R5LPCY&client_secret=CYYND5AXCAJ1SMQDNPZBHODBX1OEX3SQY4RBLPQKDAPXHQGT&near="+ll+",NY &sortByDistance=1&radius=500&query=+"+restaurant+"&v=20161124&m=foursquare",
+            url: "https://api.foursquare.com/v2/venues/explore?client_id=Clientkey2&client_secret=Clientsecret2&near="+ll+",NY &sortByDistance=1&radius=500&query=+"+restaurant+"&v=20161124&m=foursquare",
             method: 'GET'
         })
         .done(function(data) {
