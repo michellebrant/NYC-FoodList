@@ -142,7 +142,7 @@ app.get("/yourlists/arehere/:id/:listname", function(req, res){
 app.get("/:area/:name", function(req, res){
   area = req.params.area
   name = req.params.name
-  client.get("https://api.foursquare.com/v2/venues/explore?client_id=Clientkey1&client_secret=Clientsecret1&near="+area+",NY &sortByDistance=1&radius=500&query="+name+"&v=20161124&m=foursquare", function (data, response) {
+  client.get("https://api.foursquare.com/v2/venues/explore?client_id="+Clientkey1+"&client_secret="+Clientsecret1+"&near="+area+",NY &sortByDistance=1&radius=500&query="+name+"&v=20161124&m=foursquare", function (data, response) {
     restaurant_name = data.response.groups[0].items[0].venue.name;
     tip = data.response.groups[0].items[0].tips[0].text;
     reviewurl = data.response.groups[0].items[0].tips[0].canonicalUrl;
