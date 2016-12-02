@@ -154,6 +154,13 @@ ul{
       rgba(0, 0, 0, 0.2)), url('pizza2.jpg') no-repeat -66px;
       background-size: cover; }
 }
+
+  @media only screen and (max-width: 300px){
+        .heading7{ background-size: 200%; }
+          .dabody { background: linear-gradient(rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url('pizza2.jpg') no-repeat -66px;
+      background-size: cover; }
+}
 /* div{
   border: black solid 5px;
 }
