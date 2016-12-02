@@ -29,7 +29,8 @@ app.use(session({
   secret: 'theTruthIsOutThere51',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }
+  cookie: { secure: false,
+  expires: new Date(Date.now() + 600 * 10000) }
 }))
 
 var db = pgp(process.env.DATABASE_URL || 'postgres://MichelleBrant@localhost:5432/foodlist_db');

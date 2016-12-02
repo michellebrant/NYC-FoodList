@@ -5,6 +5,7 @@
       rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)
     ), url('NYC.jpg') no-repeat 100% -66px;
+    background-size: 100%;
 
   background-size: cover;
   height: 400px;
@@ -25,6 +26,7 @@
   color: red;
   margin: 0px;
   padding: 0px;
+    background-size: 100%;
 }
 
 h1{
@@ -48,6 +50,7 @@ h1{
   color: red;
   margin: 0px;
   padding: 0px;
+    background-size: 100%;
 }
 .heading7{
   text-align: center;
@@ -61,6 +64,7 @@ h1{
   color: red;
   margin: 0px;
   padding: 0px;
+    background-size: 100%;
 }
 li{
    font-family: 'PT Sans', sans-serif;
@@ -110,8 +114,40 @@ ul{
   color: red;
   margin: 0;
   padding: 0;
+  background-size: 100%;
+    background-size: 100%;
+
 }
 
+@media only screen and (max-width: 700px){
+  .heading3 { height: 200px; }
+  .heading4 { height: 200px; }
+  .heading5 { background-size: 150%; }
+  .heading5 { height: 200px; }
+  .heading7 { background-size: 150%; }
+  .heading7  { height: 200px; }
+
+}
+@media only screen and (max-width: 800px){
+
+    .heading5 { background-size: 120%; }
+
+
+}
+@media only screen and (max-width: 900px){
+        .heading7{ background-size: 120%; }
+}
+@media only screen and (max-width: 960px){
+     .signupbody {background-size:200%;}
+  }
+
+ @media only screen and (max-width: 600px){
+     .signupbody {background-size:300%;}
+  }
+
+  @media only screen and (max-width: 500px){
+        .heading7{ background-size: 200%; }
+}
 /* div{
   border: black solid 5px;
 }
@@ -159,6 +195,7 @@ input{
       rgba(0, 0, 0, 0.2)
     ),  url('loopy.jpg');
   background-size: cover;
+    background-size: 100%;
 }
 
 .confirmation2{
@@ -287,3 +324,10 @@ background-size: 100%;
   margin-top: 20px;
 }
 
+.container-fluid{
+  text-align: center;
+}
+
+.notamember{
+  font-size: 20px;
+}
