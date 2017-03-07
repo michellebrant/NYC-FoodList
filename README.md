@@ -1,19 +1,12 @@
 # NYC FoodList
-
+![SearchScreen](https://github.com/michellebrant/NYC-FoodList/blob/master/NYCFLSS.png)
 NYC FoodList allows you to congregate lists of different restaurants, places, or things to do around the five boroughs.
 
-### Wireframe 1
-
-![Wireframe1](https://github.com/michellebrant/NYC-FoodList/blob/master/Wireframe1.png)
-
-### Wireframe 2
-![Wireframe2](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe2.png)
-
-### Wireframe 3
-![Wireframe3](https://github.com/michellebrant/NYC-FoodList/blob/master/wireframe3.png)
+## Description
+NYC FoodList is your one stop shop to find new bars, restaurants and things to do in one spot. Using the FourSquare API, users can search by cuisine, activity type, ambiance ('date spot') and further filter by area to find the best places in the five boroughs. Once the perfect spot is selected, complete with ratings and reviews, users can save these spots to specific, curated lists to visit later. Never be caught in a pinch when selecting a brunch place, coffee catch up, or happy hour spot again.
 
 ## User Story
-The target users for this game are city foodies and adventure seekers.
+The target users for this game are urban foodies and adventure seekers.
 
 As a user, I can create lists for different types of things I want to do- brunch, bars, coffee shops- and save future locations I'd like to visit.
 
